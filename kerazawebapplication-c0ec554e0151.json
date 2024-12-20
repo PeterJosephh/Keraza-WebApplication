@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "kerazawebapplication",
+  "private_key_id": "c0ec554e01510c5060fd7292c8c3a87f10df0eef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC1kySbanz5EYFw\nRNY7yiiXA/A/hM/UZDWrk+EWLlloiueKx/m1OgMOOYGGTDUkrbginc0THE78mUPF\nnBEldaNr1uPvQKd1NKvU36Lst8OnL0igb43WCdWK3H/DjRxp5AvaFz6wuQTfmV1Q\nfRGag6/dmujwDiWeVn5PNqvfZtibZjoMkCJUpuoWCIG9t89zS/CTqtShwLsNtVCi\n04h842fbPqGuUKAPq/DxkGpSrUTtXxQ2jMq9WlAz6YE+6MMZO/MgicG2lMhS1zX6\nWTNCyHzspHZXz/70iqJmYtyECMazIJB3tk9ZOsZef483G5JAbvQXmEozSXPsit0i\nuT+DgRhFAgMBAAECggEAAmD0iYgf5LklIUBBCtANL4HcReHmHNVY9qbCKZCDmHxy\ng4ak3WWA4L6K+dslKDq2Y7JHQBJFcOtv9LaAIdykYydIsATb9ecfmk6eAl7AOSTE\nAfPGdnw8NfE3R9lqQ+De8SnrFJ4uwU4B586bpdv9gYqRtYNjE1liu1+BaX3U3J+4\nzLJUN9c0XMBDzrf09ZK9U1MZvqBkqjpxFe6NQcCQLH80w28DLYzRfo4VHz+R+Bij\nI3lIWqhfCttdZRz1sFk/tbWQYAlNiSZ8KKILYld6vfihAns/VEHF9y3J3GPzHjfL\nr/P4/gF6TQ9bT7+B4PDClS6s2sMNXGxpqRtayW5HgQKBgQD5nDKokrtvaOTEW+os\nUPAPiOpAXHP0z32KkjDzoBImoC+eVQJuQydZ6DPhHRoe3E2Wo4OamjZm1CATKvGa\n1fzkEV1YgSU4qScBJYR4KmO6SjzeABkJYnidij3I529yBPAci+DgGVt2c2LAfo9Z\nKrGBSGRE3ltjsZ5TPR4cocPmEQKBgQC6ORSI3vjLMgWALU96zvYQIjklmnM8jxNC\nwkguB/pWzwzu9741jMvBDWgMQ0EsISi4aJH4sgui5T7VcWZZMsfGBSrEZcAGMwK1\nDUCT9mZ7Upj4G34xcAGCvpJSmZaqgNnBmwDbG7I9W1OPWZIgljBCGNwB1huapu3K\nnXyrYTVK9QKBgQCqzPxJJ6bEdIVd6/tQec3bA3gvtFPQaA7ivGhsvNLOxXvwHwF7\ny83okqC1YMGX7m3VL2yFZRLmyC5uj0smBVl4An3aavy6Sd0bxr1fsLnvJo+B5ZU8\nO7qHKqpeiCdVYRWgowKstg1E/23KhI+4lyNBcPTTv0fP7yGEmeS5+ONg0QKBgGTA\n8U1EZhN6EuPQoAnv483C1mxz7hk7x83805SkGFvTVkoMnErYzHy8xiisUpyPrDpp\nyWBm5EjUA3T0D83+3XtT3Fm6O3SfML3IV8I2NChQ/hZuuY4B7a9RcFVkZ9IEOMy5\nEnN5vqvXt5P9gERFPgLk9FPCBdlcq5dOMd9/jpfpAn9KSh1sye/akKC4a0MLfKI5\ntdoMdnD+k/UuTPxij7Vyx5Fvkg0gZWe4XbpAYe1n/OscdoOoCwfMRo8hrk0rddmT\n+Xcwx2l2cbz/HTFJdzzkDf6WfMFla5s+1lI3TI9TgPGJgF6DtXT4uWucyTOjqFyT\n4s+B8bb8vy1cKJP2T6e6\n-----END PRIVATE KEY-----\n",
+  "client_email": "googledriveserviceaccount@kerazawebapplication.iam.gserviceaccount.com",
+  "client_id": "101604646161861569559",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googledriveserviceaccount%40kerazawebapplication.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

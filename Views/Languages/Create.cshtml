@@ -1,0 +1,35 @@
+﻿@model KerazaWebApplication.Models.Language
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <h1 class="mb-3">Add Language</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="container py-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-floating my-3">
+                <input asp-for="Name" class="form-control" id="Name" placeholder="Name" />
+                <label for="Name">Name</label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">Create</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

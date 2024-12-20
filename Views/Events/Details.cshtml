@@ -1,0 +1,107 @@
+﻿@model KerazaWebApplication.Models.Event
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <a asp-action="Edit" asp-controller="Events" asp-route-id="@Model.Id"> <h1 class="mb-3">@Model.Name <i style="font-size:30px" class="fa fa-edit text-primary"></i></h1></a>
+    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+</div>
+
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="tab-content">
+            <div id="tab-1" class="row container">
+                <div class="col-4 rounded p-2" style="background-color: #E5F5FB">
+                    <div class="sermon-info rounded p-2 mb-2" style="border: 1px dashed rgba(0, 185, 142, .3); background-color : white">
+                        @if (Model.Sermons.Count > 0)
+                        {
+                            <img class="img-fluid" src="@Model.Sermons[0].ImageURL" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+                        }
+                        else
+                        {
+                            <img class="img-fluid" src="Placeholder" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+                        }
+                    </div>
+                    <h3>@Model.Name</h3>
+                    <h5>@Model.Date</h5>
+                    <p class="animated fadeIn mb-4 pb-2">
+                        @Model.Caption
+                    </p>
+
+                </div>
+                <div class="col-8">
+                    @foreach (var item in Model.Sermons)
+                    {
+                        <div class="rounded p-2 mb-2" style="background-color: #E5F5FB">
+                            <div class="sermon-info rounded p-2" style="border: 1px dashed rgba(0, 185, 142, .3); background-color : white">
+                                <div class="sermon-image" style="width: 300px; height: 150px; overflow: hidden; position: relative;">
+                                    <img src="@item.ImageURL" style="width: 100%; height: 100%; object-fit: cover;" alt="Sermon Image" class="rounded img-fluid">
+                                </div>
+                                <div class="sermon-details">
+                                    <div class="sermon-title">
+                                        <h5 class="arabic-title arabicText">@item.Title_ar</h5>
+                                        <h5 class="english-title">@item.Title_en</h5>
+                                    </div>
+                                    <div class="sermon-meta">
+                                        <p>Speaker: @item.Speaker.Name | Topic: @item.Topic.Name | Event: @item.Event.Name | Language: @item.Language.Name</p>
+                                    </div>
+                                </div>
+                                @*                                 <div class="sermon-actions mt-3">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" style="background-color: #2AA8D8; color:white" class="btn">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn" style="background-color: #2AA8D8; color:white">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn" style="background-color: #2AA8D8; color:white">Delete</a>
+                                </div> *@
+                            </div>
+                        </div>
+                    }
+                    <a asp-controller="Sermons" asp-action="create" asp-route-id="@Model.Id" class="cat-item d-block bg-light text-center rounded">
+                        <div class="rounded p-4 mt-lg-0 mt-3" style="border: 1px dashed #2AA8D8;">
+                            <div class="icon mb-3">
+                                <i style="color:#2AA8D8 !important" class=" fa fa-plus text-primary"></i>
+                            </div>
+                            <h6>Add Sermon</h6>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<style>
+
+
+    .sermon-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sermon-image {
+        width: 300px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .sermon-info {
+        overflow: hidden;
+    }
+
+    .sermon-details p {
+        margin: 5px 0;
+    }
+
+    .sermon-actions button {
+        margin-right: 10px;
+    }
+
+</style>

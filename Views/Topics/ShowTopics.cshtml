@@ -1,0 +1,73 @@
+﻿@model IEnumerable<KerazaWebApplication.Models.Topic>
+
+<div class="container">
+    <p class="p-3">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn btn-primary px-3" asp-action="Create">Create New Topic</a>
+        }
+    </p>
+
+    @foreach (var item in Model)
+    {
+        <div class="rounded p-2 m-2" style="background-color: #E5F5FB">
+            <div class="sermon-info rounded p-4" style="border: 1px dashed #2AA8D8; background-color : white">
+                <div class="sermon-image" style="width: 300px; height: 150px; overflow: hidden; position: relative;">
+                    @if (@item.Sermons.Count() > 0)
+                    {
+                        <img src="@item.Sermons[0].ImageURL" style="width: 100%; height: 100%; object-fit: cover;" alt="Sermon Image" class="rounded img-fluid">
+
+                    }else{
+                        <img src="placeholder" style="width: 100%; height: 100%; object-fit: cover;" alt="Sermon Image" class="rounded img-fluid">
+                    }
+                </div>
+                <div class="sermon-details">
+                    <div class="sermon-title">
+                        <h5 class="english-title">@item.Name</h5>
+                    </div>
+                    <div class="sermon-meta">
+                        <p>@item.Sermons.Count() Sermons</p>
+                    </div>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="sermon-actions mt-3">
+                        <a asp-action="Edit" asp-route-id="@item.Id" style="background-color: #2AA8D8; color:white" class="btn">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn" style="background-color: #2AA8D8; color:white">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn" style="background-color: #2AA8D8; color:white">Delete</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+</div>
+<style>
+
+
+    .sermon-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sermon-image {
+        width: 300px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .sermon-info {
+        overflow: hidden;
+    }
+
+    .sermon-details p {
+        margin: 5px 0;
+    }
+
+    .sermon-actions button {
+        margin-right: 10px;
+    }
+
+</style>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<KerazaWebApplication.Models.Event>
+
+@{
+    ViewData["Title"] = "ShowEvents";
+}
+<div class="row gap-3">
+    @foreach (var item in Model)
+    {
+        <div class="row col-lg-4 col-md-6 d-flex align-items-stretch wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+            <div class="col-12 property-item rounded overflow-hidden border">
+                <div class="position-relative overflow-hidden">
+                    <a asp-action="details" asp-controller="Events" asp-route-id="@item.Id">
+                        <!-- Fixed image size with object-fit: cover to handle different image sizes -->
+                        @{
+                            if (item.Sermons.Count == 0)
+                            {
+                                <img class="img-fluid" src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+                            }
+                            else
+                            {
+                                <img class="img-fluid" src="@item.Sermons[0].ImageURL" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+                            }
+                        }
+                    </a>
+                    <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">@item.Category.Name</div>
+                    @* <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">@item.Name</div> *@
+
+                </div>
+                <div class="p-4">
+                    <h5 class="text-primary arabicText mb-3">@item.Sermons.Count() Sermon</h5>
+                    <a class="d-block h5 mb-2" href="">@item.Name</a>
+                    <div>@item.Caption</div>
+                    @* <p><i class="fa fa-map-marker-alt text-primary me-2"></i>@item.Event.Name <b>|</b> @item.Date.ToString("yyyy-MM-dd")</p> *@
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,83 @@
+﻿@model KerazaWebApplication.Models.Sermon
+
+@{
+    ViewData["Title"] = "Details";
+}
+@if (User.Identity.IsAuthenticated)
+{
+	<p class="p-3">
+
+		<a class="btn btn-primary px-3" asp-action="edit" asp-route-id="@Model.Id">Edit Sermon</a>
+	</p>
+}
+
+
+<div class="container ">
+    <!-- Top Details Section -->
+    <div class="row mb-1">
+        <div class="col-md-12">
+            <h3 class="arabicText">@Model.Title_ar</h3>
+            <h2>@Model.Title_en </h2>
+
+            <div class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
+                <div class="d-flex flex-wrap">
+                    <div class="fs-6 me-3">@Model.Date.ToString("MMMM d")</div>
+                    <div class="pe-2">Category: <a asp-controller="sermons" asp-action="index" asp-route-filter="category" asp-route-id="@Model.Event.CategoryId">@Model.Event.Category.Name</a></div>
+                    <div class="pe-2">Topic: <a asp-controller="sermons" asp-action="index" asp-route-filter="topic" asp-route-id="@Model.TopicId">@Model.Topic.Name</a></div>
+                    <div class="pe-2">Event: <a asp-controller="sermons" asp-action="index" asp-route-filter="event" asp-route-id="@Model.EventId">@Model.Event.Name</a></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Image Section -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card  shadow-sm">
+                <div class=" rounded-3 card-body p-0">
+                    <!-- Image -->
+                    <div>
+                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/04rIM6HO1-s?si=ndLKfMjOBP_lnKLJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- Card Footer -->
+                    <div class="p-3 d-flex justify-content-between align-items-center">
+                        <div class="container">
+                            <div class="d-flex align-items-center">
+                                <!-- Avatar Image -->
+                                <img src="@Model.Speaker.ImageURL" alt="Avatar" class="avatar me-2">
+                                <!-- User Name -->
+                                <div>
+                                    <strong>@Model.Speaker.Name</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Caption Section -->
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div>
+                <p>@Html.DisplayFor(model => model.Caption)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+    .avatar {
+        width: 50px; /* Avatar size */
+        height: 50px;
+        border-radius: 50%; /* Makes it circular */
+        object-fit: cover; /* Keeps image ratio */
+        border: 2px dashed #2AA8D8; /* Dashed blue border */
+        padding: 2px; /* Small space inside border */
+    }
+</style>
